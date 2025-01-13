@@ -14,6 +14,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("net.dv8tion:JDA:5.2.2")
     implementation("ch.qos.logback:logback-classic:1.5.6")
+    implementation("org.json:json:20210307")
 }
 
 tasks.test {

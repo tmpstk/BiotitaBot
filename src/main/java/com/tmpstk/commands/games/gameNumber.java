@@ -1,5 +1,6 @@
-package com.tmpstk.commands;
+package com.tmpstk.commands.games;
 
+import com.tmpstk.utils.Utils;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -23,15 +24,17 @@ public class gameNumber extends ListenerAdapter
         if (event.getAuthor().isBot()) return;
 
         Message message = event.getMessage();
+        if (!message.getContentRaw().split(" ")[0].equals(Utils.getPrefix())) return;
         String content = message.getContentRaw();
         String userid = message.getAuthor().getId();
         MessageChannel channel = event.getChannel();
 
-        if (content.equals(">game number")) {
+        if (content.equals(Utils.getPrefix() + " gamenumber")) {
             if (channels.containsKey(channel)) return;
             startGame(channel, userid);
             channels.put(channel, gameStates.get(userid));
         } else if (gameStates.containsKey(userid)) {
+            content = content.split(" ")[1];
             processGuess(channel, userid, content);
         }
     }
