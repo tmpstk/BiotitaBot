@@ -6,14 +6,15 @@ import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
-public class gameNumber extends ListenerAdapter
+public class GameNumber extends ListenerAdapter
 {
     private final Map<String, GameState> gameStates = new HashMap<>();
     private final Map<MessageChannel, GameState> channels = new HashMap<>();

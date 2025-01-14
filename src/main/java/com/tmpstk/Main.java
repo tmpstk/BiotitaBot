@@ -3,7 +3,6 @@ package com.tmpstk;
 import com.tmpstk.utils.Utils;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.json.JSONObject;
 
 import javax.security.auth.login.LoginException;
@@ -15,7 +14,7 @@ public class Main {
     private static final StartThings startThings = new StartThings();
     private static final Utils utils = new Utils();
 
-    public static void main(String[] args) throws LoginException, IOException {
+    public static void main(String[] args) {
         try{
             String configPath = "src/main/resources/config.json";
             String token = getTokenFromConfig(configPath);

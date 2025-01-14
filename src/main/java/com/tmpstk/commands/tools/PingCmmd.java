@@ -8,7 +8,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.function.Consumer;
 
-public class ping extends ListenerAdapter
+public class PingCmmd extends ListenerAdapter
 {
     @Override
     public void onMessageReceived(MessageReceivedEvent event)
