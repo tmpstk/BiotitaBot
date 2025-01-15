@@ -21,8 +21,9 @@ public class Main {
 
             JDA jda = JDABuilder.createDefault(token).build();
 
-            startThings.initialize(jda);
+            jda.awaitReady();
             utils.receiveJDA(jda);
+            startThings.initialize(jda);
         } catch (Exception e) {
             e.printStackTrace();
         }

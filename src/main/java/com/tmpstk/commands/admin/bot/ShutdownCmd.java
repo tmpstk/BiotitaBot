@@ -11,7 +11,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.function.Consumer;
 
-public class ShutdownCmmd extends ListenerAdapter {
+public class ShutdownCmd extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         if (event.getAuthor().isBot()) return;
